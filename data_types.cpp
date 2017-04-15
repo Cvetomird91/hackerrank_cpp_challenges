@@ -32,8 +32,8 @@ int main() {
     cout << longNumber << endl;
     cout << longLongNumber << endl;
     cout << c << endl;
-    cout << flt << endl;
-    cout << dbl << endl;
+	printf("0.5f", flt);
+	printf("0.5lf", dbl);
 
     return 0;
 }
