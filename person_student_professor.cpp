@@ -69,7 +69,7 @@ int Student::studentCount = 0;
 int main() {
 
 	Student *s = new Student;
-    Student *c = new Student;
+	Student *c = new Student;
 	Student *p = new Student;
 
     Professor *Vasilev = new Professor;
