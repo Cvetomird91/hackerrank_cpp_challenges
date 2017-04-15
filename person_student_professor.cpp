@@ -68,9 +68,9 @@ int Student::studentCount = 0;
 
 int main() {
 
-	Student *s = new Student;
-	Student *c = new Student;
-	Student *p = new Student;
+    Student *s = new Student;
+    Student *c = new Student;
+    Student *p = new Student;
 
     Professor *Vasilev = new Professor;
     //Vasilev->getdata();
@@ -78,7 +78,7 @@ int main() {
     Professor *stamatov = new Professor;
     Professor *Proinov = new Professor;
 
-    p->getdata();
+    (*p).getdata();
     p->putdata();
 
 	return 0;
