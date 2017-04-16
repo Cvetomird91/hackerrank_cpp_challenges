@@ -13,12 +13,12 @@ class Person {
         virtual void putdata() {
             std::cout << this->name << ' ' << this->age;
         }
-		virtual void getcount() {
-			std::cout << Person::personCount << endl;
-		}
-		Person() {
-			Person::personCount++;
-		}
+        virtual void getcount() {
+            std::cout << Person::personCount << endl;
+        }
+        Person() {
+            Person::personCount++;
+        }
 };
 
 int Person::personCount = 0;
@@ -88,10 +88,10 @@ int main() {
     p->putdata();
 */
 
-	Proinov->getdata();
-	Proinov->putdata();
-	Proinov->getcount();
+    Proinov->getdata();
+    Proinov->putdata();
+    Proinov->getcount();
 
-	return 0;
+    return 0;
 
 }
