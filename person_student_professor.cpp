@@ -1,21 +1,27 @@
-#include <cmath>
-#include <cstdio>
-#include <vector>
 #include <iostream>
-#include <algorithm>
+
 using namespace std;
 
 class Person {
     public:
         string name;
         int age;
+		static int personCount;
         virtual void getdata() {
             std::cin >> this->name >> this->age;
         }
         virtual void putdata() {
             std::cout << this->name << ' ' << this->age;
         }
+		virtual void getcount() {
+			std::cout << Person::personCount << endl;
+		}
+		Person() {
+			Person::personCount++;
+		}
 };
+
+int Person::personCount = 0;
 
 class Professor : public Person {
     public:
@@ -30,7 +36,7 @@ class Professor : public Person {
         void putdata() {
             std::cout << this->name << ' ' << this->age << ' ' << this->publications << ' ' << this->cur_id << endl;
         }
-        Professor() {
+        Professor() : Person() {
             Professor::professorCount++;
             this->cur_id = Professor::professorCount;
         }
@@ -40,11 +46,11 @@ int Professor::professorCount = 0;
 
 class Student : public Person {
     public:
-        int marksCount = 6;
+        const int marksCount = 6;
         int marks[6];
         int cur_id;
         static int studentCount;
-        Student() {
+        Student() : Person() {
             Student::studentCount++;
             this->cur_id = Student::studentCount;
         }
@@ -75,11 +81,16 @@ int main() {
     Professor *Vasilev = new Professor;
     //Vasilev->getdata();
 
-    Professor *stamatov = new Professor;
+    Professor *Stamatov = new Professor;
     Professor *Proinov = new Professor;
-
+/*
     (*p).getdata();
     p->putdata();
+*/
+
+	Proinov->getdata();
+	Proinov->putdata();
+	Proinov->getcount();
 
 	return 0;
 
