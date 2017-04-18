@@ -55,8 +55,12 @@ class Student : public Person {
             this->cur_id = Student::studentCount;
         }
         void getdata() {
-            std::cin >> this->name >> this->age >> this->marks[0] >> this->marks[1] >> this->marks[2] >> this->marks[3]
-                     >> this->marks[4] >> this->marks[5];
+
+            std::cin >> this->name >> this->age;
+			for (int i; i < this->marksCount; i++) {
+				cin >> this->marks[i];
+			}
+
         }
         void putdata() {
             int total = 0;
