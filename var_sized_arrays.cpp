@@ -9,16 +9,6 @@ using namespace std;
 
 typedef vector< vector<int> > jaggedArray;
 
-/*
-    get number of arrays and queries
-    get array strings and store them in arrayNumbers[]
-    get queries and store them in queries[]
-    create dynamicMatrix
-    for each array string create a vector<int> with createVectorArray and fill dynamicMatrix
-        with the output
-    for each query string parse the integers from it and output the jagged array element
-*/
-
 vector<int> createVectorArray(string str) {
     int numbersCount;
     vector<int> temp;
@@ -43,12 +33,16 @@ vector<int> createVectorArray(string str) {
 
 }
 
-void fillJaggedArray(string str[], jaggedArray& matrix) {
+void fillJaggedArray(const string& arrayNumbers[], jaggedArray& matrix, const int& arrayCount) {
 
+    for (int i; i < arrayCount; i++) {
+        getline(cin, arrayNumbers[i]);
+        vector<int> temp = createVectorArray(arrayNumbers[i]);
+        matrix.push_back(temp);
+    }
 }
 
-int queryJaggedArray(string query, const jaggedArray& matrix) {
-    int pos[2];
+int queryJaggedArray(string queries[], const jaggedArray& matrix) {
     int col, row;
 
     cin >> col >> row;
@@ -57,18 +51,19 @@ int queryJaggedArray(string query, const jaggedArray& matrix) {
 
 int main() {
 
-	unsigned int arrayCount;
-	unsigned int queryCount;
+    unsigned int arrayCount;
+    unsigned int queryCount;
 
     cin >> arrayCount >> queryCount;
-	jaggedArray matrix;
-	matrix.reserve(arrayCount);
+    jaggedArray matrix;
+    matrix.reserve(arrayCount);
 
-	string arrayNumbers[arrayCount];
-	string queries[queryCount];
+    string arrayNumbers[arrayCount];
+    string queries[queryCount];
 
     cin.ignore(1, '\n');
 
+	//refactor as fillJaggedArray
     for (int i; i < arrayCount; i++) {
         getline(cin, arrayNumbers[i]);
         vector<int> temp = createVectorArray(arrayNumbers[i]);
@@ -79,6 +74,7 @@ int main() {
         getline(cin, queries[i]);
     }
 
+	//refactor as queryJaggedArray
     for (int i = 0; i < queryCount; i++) {
         int col, row;
         stringstream ss(queries[i]);
@@ -87,6 +83,6 @@ int main() {
         cout << matrix[col][row] << endl;
     }
 
-	return 0;
+    return 0;
 
 }
