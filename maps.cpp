@@ -5,7 +5,7 @@
 using namespace std;
 
 const int insert = 1;
-const int insertStudent = 2;
+const int insertStudentOnly = 2;
 const int printMark = 3;
 
 int main() {
@@ -30,7 +30,7 @@ int main() {
             marks[student] += grade;
         }
 
-        if (type == insertStudent) {
+        if (type == insertStudentOnly) {
             marks[student] = 0;
         }
 
