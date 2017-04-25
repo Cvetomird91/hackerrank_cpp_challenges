@@ -1,11 +1,6 @@
-#include <cmath>
-#include <cstdio>
-#include <vector>
 #include <iostream>
 #include <sstream>
-#include <set>
 #include <map>
-#include <algorithm>
 
 using namespace std;
 
