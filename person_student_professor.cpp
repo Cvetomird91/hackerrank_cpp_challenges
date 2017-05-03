@@ -83,18 +83,13 @@ int main() {
     Student *p = new Student;
 
     Professor *Vasilev = new Professor;
-    //Vasilev->getdata();
 
     Professor *Stamatov = new Professor;
     Professor *Proinov = new Professor;
-/*
-    (*p).getdata();
-    p->putdata();
-*/
 
     Proinov->getdata();
     Proinov->putdata();
-    Proinov->getcount();
+    (*Proinov).getcount();
 
     return 0;
 
