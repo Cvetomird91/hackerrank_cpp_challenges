@@ -78,9 +78,9 @@ int Student::studentCount = 0;
 
 int main() {
 
-    Student *s = new Student;
-    Student *c = new Student;
-    Student *p = new Student;
+    Student s;
+    Student c;
+    Student p;
 
     Professor *Vasilev = new Professor;
 
@@ -90,6 +90,9 @@ int main() {
     Proinov->getdata();
     Proinov->putdata();
     (*Proinov).getcount();
+
+	//(delete s, delete c, delete p, delete Vasilev, delete Stamatov, delete Proinov);
+	(delete Vasilev, delete Stamatov, delete Proinov);
 
     return 0;
 
