@@ -91,7 +91,6 @@ int main() {
     Proinov->putdata();
     (*Proinov).getcount();
 
-	//(delete s, delete c, delete p, delete Vasilev, delete Stamatov, delete Proinov);
     (delete Vasilev, delete Stamatov, delete Proinov);
 
     return 0;
