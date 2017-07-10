@@ -12,29 +12,37 @@ int* concatArrays( T1& array_1, T2& array_2) {
 
   for (int i = 0; i < arrayCount_1; i++) {
   	p[i] = array_1[i];
+    cout << "i: " << i << endl;
+    cout << "array_1[i]: " << array_1[i] << endl;
+    cout << endl;
   }
 
   for (int i = arrayCount_1; i < newArraySize; i++) {
-	int newIndex = i-arrayCount_2;
-	p[i] = array_2[--newIndex];
+    int newIndex = i-arrayCount_2;
+
+	if (newArraySize % 2 == 1)
+		newIndex--;
+
+   	p[i] = array_2[newIndex];
+    cout << "i: " << i << endl;
+    cout << "array_2[i]: " << array_2[newIndex] << endl;
+    cout << endl;
   }
 
   return p;
 }
 
 int main() {
-  int ary[4] = {1, 2, 3, 123};
+  
+  int ary[3] = {1, 2, 3};
   int anotherAry[3] = {4, 5, 6};
-
   int *r = concatArrays(ary, anotherAry);
-
   cout << *(r + 0) << endl;
   cout << *(r + 1) << endl;
   cout << *(r + 2) << endl;
   cout << *(r + 3) << endl;
   cout << *(r + 4) << endl;
   cout << *(r + 5) << endl;
-  cout << *(r + 6) << endl;
 
   delete r;
 
